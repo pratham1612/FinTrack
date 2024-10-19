@@ -1,0 +1,18 @@
+Index: backend/src/main/java/com/example/fintrack/repository/GoalRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\npackage com.example.fintrack.repository;\r\n\r\nimport com.example.fintrack.entity.Goal;\r\nimport org.springframework.data.jpa.repository.JpaRepository;\r\nimport org.springframework.stereotype.Repository;\r\n\r\n@Repository\r\npublic interface GoalRepository extends JpaRepository<Goal, Long> {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/com/example/fintrack/repository/GoalRepository.java b/backend/src/main/java/com/example/fintrack/repository/GoalRepository.java
+--- a/backend/src/main/java/com/example/fintrack/repository/GoalRepository.java	(revision ab3283be2417ed74f1d839ead70aaffd20348044)
++++ b/backend/src/main/java/com/example/fintrack/repository/GoalRepository.java	(date 1729335541633)
+@@ -7,4 +7,5 @@
+ 
+ @Repository
+ public interface GoalRepository extends JpaRepository<Goal, Long> {
++    hg
+ }
+diff --git a/backend/pom.xml b/backend/pom.xml
+deleted file mode 100644

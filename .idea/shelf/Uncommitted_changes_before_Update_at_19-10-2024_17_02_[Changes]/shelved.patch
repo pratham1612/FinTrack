@@ -1,0 +1,19 @@
+Index: backend/src/main/java/com/example/fintrack/entity/Account.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\n@Data\r\n@NoArgsConstructor\r\n@AllArgsConstructor\r\n@Entity\r\npublic class Account {\r\n    // existing fields and methods\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/com/example/fintrack/entity/Account.java b/backend/src/main/java/com/example/fintrack/entity/Account.java
+--- a/backend/src/main/java/com/example/fintrack/entity/Account.java	(revision c64738fc0b2f13626697443319d674c6cc0bfc82)
++++ b/backend/src/main/java/com/example/fintrack/entity/Account.java	(date 1729337069976)
+@@ -3,6 +3,8 @@
+ import lombok.Data;
+ import lombok.NoArgsConstructor;
+ 
++import javax.persistence.Entity;
++
+ @Data
+ @NoArgsConstructor
+ @AllArgsConstructor

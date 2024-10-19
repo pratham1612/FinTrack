@@ -1,23 +1,35 @@
-
+package com.example.fintrack.entity;
+import javax.persistence.*;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Entity
+@Table(name = "Expense")
 public class Expense {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String description;
+    @Column(nullable = false)
     private Double amount;
-    private String category;
+    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date date;
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private ExpenseType type;
+    private String description;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+    // Getters and Setters
+    public enum ExpenseType {
+        Needs,
+        Wants,
+        Savings
+    }
 }

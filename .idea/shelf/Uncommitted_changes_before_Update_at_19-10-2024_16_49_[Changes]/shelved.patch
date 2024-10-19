@@ -1,0 +1,19 @@
+Index: backend/src/main/java/com/example/fintrack/entity/Expense.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\npackage com.example.fintrack.entity;\r\n\r\nimport javax.persistence.*;\r\nimport java.util.Date;\r\n\r\n@Entity\r\n@Table(name = \"Expense\")\r\npublic class Expense {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    private Long id;\r\n\r\n    @Column(nullable = false)\r\n    private Double amount;\r\n\r\n    @Column(nullable = false)\r\n    @Temporal(TemporalType.DATE)\r\n    private Date date;\r\n\r\n    @Column(nullable = false)\r\n    @Enumerated(EnumType.STRING)\r\n    private ExpenseType type;\r\n\r\n    private String description;\r\n\r\n    @ManyToOne\r\n    @JoinColumn(name = \"user_id\", nullable = false)\r\n    private User user;\r\n\r\n    // Getters and Setters\r\n\r\n    public enum ExpenseType {\r\n        Needs,\r\n        Wants,\r\n        Savings\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/com/example/fintrack/entity/Expense.java b/backend/src/main/java/com/example/fintrack/entity/Expense.java
+--- a/backend/src/main/java/com/example/fintrack/entity/Expense.java	
++++ b/backend/src/main/java/com/example/fintrack/entity/Expense.java	
+@@ -1,6 +1,8 @@
+ 
+ package com.example.fintrack.entity;
+ 
++import net.bytebuddy.implementation.bind.annotation.FieldValue;
++
+ import javax.persistence.*;
+ import java.util.Date;
+ 

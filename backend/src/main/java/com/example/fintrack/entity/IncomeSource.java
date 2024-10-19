@@ -1,22 +1,25 @@
-
+package com.example.fintrack.entity;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
+@Table(name = "IncomeSource")
 @Entity
 public class IncomeSource {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    @Column(nullable = false)
+    private String source_name;
+    @Column(nullable = false)
     private Double amount;
+    @Column(nullable = false)
+    private String frequency;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }
